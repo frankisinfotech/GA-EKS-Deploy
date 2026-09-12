@@ -41,11 +41,11 @@ jobs:
      - name: Build Image
        env:
          REGISTRY: 376129865641.dkr.ecr.eu-west-1.amazonaws.com
-         REPO: merchant_api
+         REPO: mpesa-gateway
          REPOSITORY_TAG: ${REGISTRY}/${REPO}:${GITHUB_RUN_NUMBER}
         
        run: | 
-         docker build -t merchant_api .
+         docker build -t mpesa-gateway .
          docker tag ${REPO}:latest ${REGISTRY}/${REPO}:$GITHUB_RUN_NUMBER
          docker push ${REGISTRY}/${REPO}:$GITHUB_RUN_NUMBER
 
